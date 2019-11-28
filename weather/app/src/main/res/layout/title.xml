@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="2dp">
+
+    <ImageButton
+        android:id="@+id/change_city_btn"
+        android:layout_width="41sp"
+        android:layout_height="41sp"
+        android:background="@drawable/ic_city_foreground"/>
+
+    <TextView
+        android:id="@+id/current_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="#fff"
+        android:textSize="21sp"/>
+
+</RelativeLayout>
