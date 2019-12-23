@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:paddingTop="11dp"
+    android:id="@+id/frame_layout">
+
+    <LinearLayout
+        android:id="@+id/front"
+        android:layout_width="258dp"
+        android:layout_height="149dp"
+        android:orientation="vertical"
+        android:background="@drawable/card"
+        android:clickable="true"
+        android:focusable="true"
+        >
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/back"
+        android:layout_width="258dp"
+        android:layout_height="149dp"
+        android:paddingLeft="11dp"
+        android:paddingRight="11dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/evidence_bg">
+
+        <TextView
+            android:id="@+id/evidence_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:textSize="16sp"
+            android:textColor="#1B3A38"
+            android:textStyle="bold"
+            android:padding="2dp"
+            android:layout_gravity="left"
+            android:layout_marginBottom="4dp"/>
+        <TextView
+            android:id="@+id/evidence_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            android:padding="2dp" />
+
+    </LinearLayout>
+
+</FrameLayout>

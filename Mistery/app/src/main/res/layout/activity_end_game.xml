@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/black"
+    android:paddingTop="44dp"
+    android:paddingBottom="33dp"
+    android:id="@+id/end_layout"
+    tools:context=".EndGame">
+
+
+    <TextView
+        android:id="@+id/end_text"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/win"
+        android:textSize="15sp"
+        android:textColor="#9B2323"
+        android:lineSpacingExtra="7sp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginRight="37dp"
+        android:scrollbars="vertical"/>
+
+</LinearLayout>

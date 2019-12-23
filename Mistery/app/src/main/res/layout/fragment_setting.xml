@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/black"
+    tools:context=".fragments.SettingFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:padding="11dp"
+        android:text="设定"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/thread_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:text="音乐"/>
+
+        <ImageView
+            android:id="@+id/music"
+            android:layout_width="24sp"
+            android:layout_height="24sp"
+            android:layout_marginLeft="7dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ifalse"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="44dp"
+        android:paddingRight="44dp"
+        android:paddingTop="22sp"
+        android:paddingBottom="22sp"
+        android:orientation="vertical"
+        android:background="@android:color/black">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#fff"
+            android:textSize="15sp"
+            android:text="无边的恶意，犹如万丈深渊，深不见底"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/thread_bg"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/mistery" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="33dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:text="该游戏改编自东野圭吾同名小说《恶意》"
+                android:layout_marginBottom="2dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dip"
+                android:background="@android:color/black"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tips"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:background="@drawable/jbs"
+            android:text="玩法和提示"
+            android:textColor="#fff"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginBottom="11dp"
+            android:gravity="center"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/reset"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:background="@drawable/jbs"
+            android:text="重置游戏进度"
+            android:textColor="#fff"
+            android:layout_marginBottom="11dp"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/suggestions"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:background="@drawable/jbs"
+            android:text="建议和反馈"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:textColor="#fff"
+            android:textSize="15sp"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
