@@ -21,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.mistery.MainActivity;
+import com.example.mistery.MusicServer;
 import com.example.mistery.MyDB;
 import com.example.mistery.R;
 import com.example.mistery.Splash;
@@ -40,6 +41,8 @@ public class SettingFragment extends Fragment {
     private MyDB myDB;
     private SQLiteDatabase dbReader;
     private SQLiteDatabase dbWriter;
+
+    private Intent intent;
 
     private boolean status;
 
@@ -79,7 +82,10 @@ public class SettingFragment extends Fragment {
         reset = view.findViewById(R.id.reset);
         music = view.findViewById(R.id.music);
 
+        intent = new Intent(getActivity(), MusicServer.class);
+
         initData();
+
 
         music.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,11 +94,13 @@ public class SettingFragment extends Fragment {
                     status = false;
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                         music.setBackground(getActivity().getResources().getDrawable(R.drawable.ifalse));
+                        getActivity().stopService(intent);
                     }
                 }else {
                     status = true;
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                         music.setBackground(getActivity().getResources().getDrawable(R.drawable.select));
+                        getActivity().startService(intent);
                     }
                 }
                 update();
@@ -122,8 +130,9 @@ public class SettingFragment extends Fragment {
 
     private void initData(){
         Cursor cursor = dbReader.rawQuery("SELECT * FROM status WHERE count=?",new String[]{"music"});
-        cursor.moveToFirst();
-        int m = cursor.getInt(cursor.getColumnIndex("status"));
+        int m = 1;
+        if (cursor.moveToFirst())
+            m = cursor.getInt(cursor.getColumnIndex("status"));
         if (m==0){
             status = false;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {

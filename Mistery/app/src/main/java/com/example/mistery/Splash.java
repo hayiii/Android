@@ -20,6 +20,8 @@ public class Splash extends AppCompatActivity {
    private ImageView iv2;
    private ImageView iv3;
 
+   private Intent intent;
+
     private Boolean isFirstIn = false;
 
    private TextView tv;
@@ -30,6 +32,9 @@ public class Splash extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);   //隐藏状态栏
         getSupportActionBar().hide();//隐藏标题栏
         setContentView(R.layout.activity_splash);
+
+        intent = new Intent(Splash.this,MusicServer.class);
+        startService(intent);
 
         final SharedPreferences sharedPreferences = this.getSharedPreferences("is_first_in_data",MODE_PRIVATE);
         isFirstIn = sharedPreferences.getBoolean("isFirstIn",true);

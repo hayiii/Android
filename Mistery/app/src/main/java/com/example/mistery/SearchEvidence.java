@@ -108,7 +108,9 @@ public class SearchEvidence extends AppCompatActivity {
 
     public void initData(int m){
         Cursor cursor = dbReader.rawQuery("select * from status where count=?",new String[]{m+""});
-        cursor.moveToFirst();
-        count = cursor.getInt(cursor.getColumnIndex("many"));
+        if(cursor.moveToFirst())
+            count = cursor.getInt(cursor.getColumnIndex("many"));
+        else
+            count = 0;
     }
 }

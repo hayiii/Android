@@ -17,7 +17,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private TextView startGame;
 
-    private Boolean isFirstIn;
+    private Boolean isFirstIn = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (!isFirstIn){
             startGame.setText("继续游戏");
-        }
+        } else
+            startGame.setText("开始游戏");
 
         startGame.setOnClickListener(new View.OnClickListener() {
             @Override

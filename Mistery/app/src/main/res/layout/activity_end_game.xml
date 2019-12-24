@@ -11,6 +11,15 @@
     android:id="@+id/end_layout"
     tools:context=".EndGame">
 
+    <TextView
+        android:id="@+id/ending"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#9B2323"
+        android:layout_gravity="center"
+        android:textSize="17sp"
+        android:layout_marginBottom="11dp"/>
+
 
     <TextView
         android:id="@+id/end_text"
@@ -18,7 +27,7 @@
         android:layout_height="match_parent"
         android:text="@string/win"
         android:textSize="15sp"
-        android:textColor="#9B2323"
+        android:textColor="#912828"
         android:lineSpacingExtra="7sp"
         android:layout_marginLeft="37dp"
         android:layout_marginRight="37dp"

@@ -317,9 +317,12 @@ public class TalkWith extends AppCompatActivity implements View.OnTouchListener 
 
     public void Update(){
         String c = name.getText().toString();
+        String ls = "";
         Cursor cursor = dbReader.rawQuery("SELECT * FROM msg WHERE user_name=?",new String[]{c});
-        cursor.moveToLast();
-        String ls = cursor.getString(cursor.getColumnIndex("content"));
+        if(cursor.moveToFirst()) {
+            cursor.moveToLast();
+            ls = cursor.getString(cursor.getColumnIndex("content"));
+        }
         dbWriter.execSQL("UPDATE person SET count=? WHERE name = ?",
                 new String[]{count+"",c});
         dbWriter.execSQL("UPDATE person SET latest=? WHERE name = ?",

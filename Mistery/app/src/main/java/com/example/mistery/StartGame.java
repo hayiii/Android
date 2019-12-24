@@ -26,9 +26,8 @@ import static java.lang.Thread.sleep;
 
 public class StartGame extends AppCompatActivity {
     private TextView storyTv;
-    private TextView taskTv;
     private ImageView imageView;
-    private LinearLayout storyLayout;
+    private LinearLayout layout;
 
     private TextViewUtils textViewUtils;
 
@@ -49,42 +48,25 @@ public class StartGame extends AppCompatActivity {
         imageView.setVisibility(View.GONE);
 
         storyTv = findViewById(R.id.story_tv);
+        layout = findViewById(R.id.start_layout);
         textViewUtils = new TextViewUtils(storyTv,getResources().getString(R.string.story),100);
 
+        imageView.setVisibility(View.VISIBLE);
+        AnimationDrawable animationDrawable = (AnimationDrawable)imageView.getBackground();
+        animationDrawable.start();
 
-        storyLayout = findViewById(R.id.story_layout);
-        storyLayout.setOnClickListener(new View.OnClickListener() {
+        layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageView.setVisibility(View.VISIBLE);
-                AnimationDrawable animationDrawable = (AnimationDrawable)imageView.getBackground();
-                animationDrawable.start();
+                Intent intent = new Intent(StartGame.this,MainView.class);
+                startActivity(intent);
 
-                storyLayout.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                       // imageView.setVisibility(View.GONE);
+                SharedPreferences sharedPreferences = getSharedPreferences("is_first_in_data",0);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("isFirstIn",false);
+                editor.commit();
 
-                        taskTv = findViewById(R.id.task);
-                        new TextViewUtils(taskTv,getResources().getString(R.string.task),100);
-
-                        storyLayout.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                //Intent intent = new Intent(StartGame.this,MainView.class);
-                                Intent intent = new Intent(StartGame.this,MainView.class);
-                                startActivity(intent);
-
-                                SharedPreferences sharedPreferences = getSharedPreferences("is_first_in_data",0);
-                                SharedPreferences.Editor editor = sharedPreferences.edit();
-                                editor.putBoolean("isFirstIn",false);
-                                editor.commit();
-
-                                finish();
-                            }
-                        });
-                    }
-                });
+                finish();
             }
         });
 
@@ -118,7 +100,7 @@ public class StartGame extends AppCompatActivity {
         db.insert("status",null,cv);
         cv.clear();
         cv.put("count","music");
-        cv.put("status","0");
+        cv.put("status","1");
         cv.put("many",0);
         db.insert("status",null,cv);
     }

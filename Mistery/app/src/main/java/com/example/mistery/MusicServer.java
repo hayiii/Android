@@ -27,7 +27,7 @@ public class MusicServer extends Service {
     public void onStart(Intent intent,int startId){
         super.onStart(intent,startId);
         if (mediaPlayer==null){
-           // mediaPlayer = MediaPlayer.create(this,R.raw.);
+            mediaPlayer = MediaPlayer.create(this,R.raw.bgm);
             mediaPlayer.setLooping(true);
             mediaPlayer.start();
         }
